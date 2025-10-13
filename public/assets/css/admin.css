@@ -1,0 +1,434 @@
+/* Font & Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    background: #f5f7fa;
+    margin: 0;
+    padding-top: 65px; /* tinggi header */
+  }
+
+/* Sidebar sticky full height */
+.sidebar {
+      width: 260px;
+      height: 100vh;                 /* tetap penuh layar */
+      position: fixed;               /* kunci di sisi kiri */
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background: rgba(6, 8, 11, 0.85);
+      backdrop-filter: blur(12px);
+      color: #f9fafb;
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* agar menu di atas & logout di bawah */
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      overflow-y: auto; /* biar bisa scroll kalau terlalu panjang */
+}
+
+/* === HEADER LOGO === */
+.sidebar-header {
+   text-align: center;
+   margin-bottom: 25px;
+}
+
+.logo-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.logo {
+   width: 80px;
+   height: 80px;
+   object-fit: contain;
+   border-radius: 50%;
+   padding: 8px;
+   margin-bottom: 10px;
+   background: rgba(255, 255, 255, 0.1);
+   transition: transform 0.3s ease;
+}
+
+.logo:hover {
+   transform: scale(1.08);
+}
+
+h3 {
+   font-size: 18px;
+   letter-spacing: 1px;
+   margin-bottom: 4px;
+}
+
+.subtitle {
+   font-size: 13px;
+   color: #9ca3af;
+}
+
+/* === MENU === */
+.menu {
+   flex-grow: 1;
+   overflow-y: auto;
+   scrollbar-width: thin;
+   scrollbar-color: rgba(100, 116, 139, 0.4) transparent;
+}
+
+.menu::-webkit-scrollbar {
+   width: 6px;
+}
+
+.menu::-webkit-scrollbar-thumb {
+   background-color: rgba(100, 116, 139, 0.4);
+   border-radius: 6px;
+}
+
+/* === ITEM MENU === */
+.menu-list {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+.menu-item {
+   margin-bottom: 5px;
+}
+
+.menu-item > a {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   color: #f3f4f6;
+   padding: 10px 12px;
+   text-decoration: none;
+   border-radius: 10px;
+   font-size: 15px;
+   transition: all 0.3s ease;
+}
+
+.menu-item > a:hover {
+   background: linear-gradient(90deg, #2563eb33, #9333ea33);
+   color: #fff;
+   transform: translateX(4px);
+}
+
+/* === SUBMENU === */
+.submenu {
+   list-style: none;
+   padding-left: 25px;
+   display: none;
+   animation: fadeIn 0.3s ease forwards;
+}
+
+.menu-item:hover .submenu {
+   display: block;
+}
+
+.submenu li a {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   padding: 8px;
+   color: #cbd5e1;
+   font-size: 14px;
+   text-decoration: none;
+   border-radius: 8px;
+   transition: all 0.2s ease;
+}
+
+.submenu li a:hover {
+   background: rgba(99, 102, 241, 0.25);
+   color: #fff;
+   transform: translateX(4px);
+}
+
+/* Tampilkan submenu ketika menu aktif */
+.menu-item.open .submenu {
+   display: block;
+}
+
+/* Item submenu aktif */
+.submenu li.active > a {
+    color: #00bcd4;
+    font-weight: bold;
+}
+
+/* === LOGOUT === */
+.logout-link {
+   margin-top: 20px;
+   width: 100%;
+   background: linear-gradient(90deg, #ef4444, #b91c1c);
+   color: white;
+   border: none;
+   padding: 12px;
+   text-align: left;
+   border-radius: 8px;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   font-weight: 500;
+   transition: all 0.3s ease;
+}
+
+.logout-link:hover {
+   background: linear-gradient(90deg, #dc2626, #7f1d1d);
+   transform: translateX(4px);
+}
+
+/* === ANIMASI HALUS === */
+@keyframes fadeIn {
+   from { opacity: 0; transform: translateY(-5px); }
+   to { opacity: 1; transform: translateY(0); }
+}
+
+/* === MENU AKTIF === */
+.menu-item.active > a {
+   background: linear-gradient(90deg, #2563eb44, #9333ea44);
+   color: #fff;
+}
+
+/* Main Konten utama disesuaikan agar tidak tertutup sidebar */
+.main {
+    flex: 1;
+    margin-left: 260px; /* samakan dengan lebar sidebar */
+    padding: 20px 30px;
+    background: #f5f7fa;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Topbar */
+/* ====== HEADER / TOPBAR ====== */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 260px; /* sesuaikan dengan lebar sidebar */
+    right: 0;
+    height: 65px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(230, 230, 230, 0.85));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #222; /* teks lebih gelap biar kontras */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 14px;
+    border-radius: 50px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.user-info:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* form label */
+.form-label {
+    text-align: left !important;
+    display: block;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 16px;
+  color: #64748b;
+}
+
+.card p {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #1e293b;
+}
+
+.table-section {
+  margin-top: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.table-section h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.table-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.table-section th, .table-section td {
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  text-align: left;
+}
+
+.table-section th {
+  background: #f4f6f8;
+  font-weight: bold;
+}
+
+.table-section tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* Samakan semua tombol agar proporsional */
+.btn {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    border-radius: 6px !important;
+    padding: 6px 14px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important; /* jarak antara ikon dan teks */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: all 0.25s ease-in-out;
+}
+
+/* Warna tombol diseragamkan */
+.btn-primary {
+    background-color: #004080 !important;
+    border: none !important;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3 !important;
+}
+
+.btn-info {
+    background-color: #17a2b8 !important;
+    border: none !important;
+    color: #fff !important;
+}
+
+.btn-info:hover {
+    background-color: #138496 !important;
+}
+
+/* Supaya ikon tidak terlalu besar */
+.btn i {
+    font-size: 14px !important;
+    line-height: 1 !important;
+}
+
+.btn-add {
+  display: inline-block;
+  background: #007bff;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.alert-success {
+  margin: 10px 0;
+  padding: 10px;
+  background: #d4edda;
+  color: #155724;
+  border-radius: 6px;
+}
+
+.action-btn {
+  display: inline-block;
+  padding: 6px 10px;
+  margin: 2px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+.action-btn.info { background: #17a2b8; }
+.action-btn.warning { background: #ffc107; color: #000; }
+.action-btn.danger { background: #dc3545; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 180px;
+  }
+  .topbar h1 {
+    font-size: 20px;
+  }
+  .card p {
+    font-size: 20px;
+  }
+}
+
+/* samar button logout */
+.menu form {
+  margin: 0; /* biar rapih */
+}
+
+/* Samakan button logout dengan link menu */
+.menu .logout-link {
+  display: block;
+  padding: 12px 15px;
+  margin: 5px 0;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;              /* samakan ukuran dengan link */
+  line-height: 1.5;             /* biar tinggi sama */
+  color: #fff;                  /* warna sama */
+  border-radius: 8px;
+  transition: 0.3s;
+  width: 100%;
+  font-family: 'Inter', sans-serif; /* font konsisten */
+}
+
+.menu .logout-link:hover {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+/*======================*/
+

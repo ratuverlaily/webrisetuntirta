@@ -1,0 +1,47 @@
+/* Membuat container tabel responsif */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Mengatur tabel agar memenuhi lebar container */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Menambahkan sedikit padding dan garis batas pada sel tabel */
+.table th, .table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Responsif untuk tampilan layar kecil */
+@media screen and (max-width: 768px) {
+    .table th, .table td {
+        display: block;
+        width: 100%;
+        text-align: left;
+        box-sizing: border-box;
+    }
+
+    .table th {
+        background-color: #f4f4f4;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    .table td {
+        position: relative;
+        padding-left: 50%;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+    }
+}
