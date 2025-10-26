@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Str;
-use App\Models\PostArtikel;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Mitra;
 use App\Models\FokusPenelitian;

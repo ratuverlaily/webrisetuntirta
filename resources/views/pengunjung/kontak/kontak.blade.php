@@ -6,9 +6,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <div class="intro">
-                    <h2 style="letter-spacing: 8px; border-bottom: 2px solid black; display:inline-block;">
-                        KONTAK
+                <div class="text-center mb-4">
+                    <h2 class="custom-underline text-judul fw-bold" style="letter-spacing: 4px;">
+                      KONTAK
                     </h2>
                 </div>
             </div>

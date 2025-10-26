@@ -4,6 +4,7 @@
 
 <section id="blog" style="background:#f0f2f5; padding:50px 0;">
     <div class="container">
+
         <div class="row">
             <div class="col-12 text-center mb-2">
                 <div class="intro">

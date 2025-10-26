@@ -20,9 +20,6 @@
     </div>
   </div>
 
-
-
-
 {{-- <div class="hero-static">
     <img src="{{ asset('assets/imgbr/bgweb2.jpg') }}" alt="Hero AI" class="img-fluid hero-img">
 </div> --}}

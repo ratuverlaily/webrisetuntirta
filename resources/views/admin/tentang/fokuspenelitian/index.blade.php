@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{{ asset('assets/css/adminview.css') }}">
 
 <div class="container py-4">
+
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h2>Daftar Fokus Penelitian</h2>
         <div class="d-flex gap-2">

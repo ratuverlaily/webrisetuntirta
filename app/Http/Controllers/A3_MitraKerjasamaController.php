@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Models\Mitra;
 
 
 class A3_MitraKerjasamaController extends Controller
 {
-    public function kerjasamaContent() {
+    public function Content() {
         $mitra = Mitra::latest()->get();
         return view('pengunjung.tentang.mitra',compact('mitra'));
     }
 
-    public function kerjasamaView(Request $request)
+    public function View(Request $request)
     {
         // Jika ingin menambahkan fitur pencarian
         $search = $request->get('search');
@@ -29,11 +28,11 @@ class A3_MitraKerjasamaController extends Controller
     }
 
 
-    public function kerjasamaCreate() {
+    public function Create() {
         return view('admin.tentang.mitra.create');
     }
 
-    public function kerjasamaStore(Request $request) {
+    public function Store(Request $request) {
         $request->validate([
             'nama_instansi' => 'required|string|max:255',
             'link_website' => 'required',
@@ -55,12 +54,12 @@ class A3_MitraKerjasamaController extends Controller
         return redirect()->route('mitrakerjasama.view')->with('success', 'Data berhasil ditambahkan!');
     }
 
-    public function kerjasamaEdit($id) {
+    public function Edit($id) {
         $mitra = Mitra::findOrFail($id);
         return view('admin.tentang.mitra.edit', compact('mitra'));
     }
 
-    public function kerjasamaUpdate(Request $request, Mitra $mitra) {
+    public function Update(Request $request, Mitra $mitra) {
 
         $request->validate([
             'nama_instansi' => 'required|string|max:255',
@@ -92,7 +91,7 @@ class A3_MitraKerjasamaController extends Controller
         return redirect()->route('mitrakerjasama.view')->with('success', 'Data berhasil diperbarui!');
     }
 
-    public function kerjasamaDestroy(Mitra $mitra) {
+    public function Destroy(Mitra $mitra) {
         if ($mitra->foto_logo && file_exists(public_path('assets/imgmitra' . $mitra->foto_logo))) {
             unlink(public_path('assets/imgmitra' . $mitra->foto_logo));
         }

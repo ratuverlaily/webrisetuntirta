@@ -38,41 +38,28 @@
           </ul>
         </li>
 
-        <!-- Kegiatan -->
-        <li class="menu-item">
-          <a href="#">
-            <i data-lucide="activity"></i>
-            <span>Kegiatan</span>
-          </a>
-          <ul class="submenu">
-            <li><a href="{{ route('sfw.view') }}"><i data-lucide="briefcase"></i> SFW</a></li>
-            <li><a href="{{ route('penelitian.view') }}"><i data-lucide="flask-conical"></i> Penelitian</a></li>
-            <li><a href="{{ route('pmasyarakat.view') }}"><i data-lucide="users"></i> Pengabdian Masyarakat</a></li>
-          </ul>
+        <!-- Artikel Penelitian -->
+        <li class="menu-item {{ request()->routeIs('artikel.*') ? 'active open' : '' }}">
+            <a href="{{ route('artikel.view') }}">
+            <i data-lucide="microscope"></i>
+            <span>Artikel Penelitian</span>
+            </a>
         </li>
 
-        <!-- Publikasi -->
+        <!-- Kegiatan -->
         <li class="menu-item">
-          <a href="#">
-            <i data-lucide="book-open"></i>
-            <span>Publikasi</span>
-          </a>
-          <ul class="submenu">
-            <li><a href="{{ route('artikel.view') }}"><i data-lucide="file-text"></i> Artikel</a></li>
-            <li><a href="{{ route('buku.view') }}"><i data-lucide="book"></i> Buku</a></li>
-            <li><a href="{{ route('publikasi.view') }}"><i data-lucide="newspaper"></i> Publikasi</a></li>
-            <li><a href="{{ route('makala.view') }}"><i data-lucide="file"></i> Makala</a></li>
-            <li><a href="{{ route('paper.view') }}"><i data-lucide="file-archive"></i> Paper</a></li>
-            <li><a href="{{ route('chapters.view') }}"><i data-lucide="layers"></i> Chapter</a></li>
-          </ul>
+            <a href="{{ route('kegiatan.view') }}">
+            <i data-lucide="calendar-days"></i>
+            <span>Kegiatan</span>
+            </a>
         </li>
 
         <!-- Gallery -->
         <li class="menu-item">
-          <a href="{{ route('gallery.view') }}">
-            <i data-lucide="image"></i>
+            <a href="{{ route('gallery.view') }}">
+            <i data-lucide="images"></i>
             <span>Gallery</span>
-          </a>
+            </a>
         </li>
 
         <!-- Anggota -->

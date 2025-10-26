@@ -6,10 +6,10 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-12 text-center mb-3">
-                <div class="intro">
-                    <h2 style="letter-spacing: 8px; color:#004080; border-bottom: 2px solid #004080; display:inline-block;">FASILITAS</h2>
-                </div>
+            <div class="text-center mb-4">
+                <h2 class="custom-underline text-judul fw-bold" style="letter-spacing: 4px;">
+                  FASILITAS
+                </h2>
             </div>
         </div>
 
@@ -17,9 +17,9 @@
             @foreach($labs as $lab)
             <div class="col-md-4">
                 <div class="card shadow-sm h-100 lab-card" data-bs-toggle="modal" data-bs-target="#labModal{{ $lab->id }}">
-                    <img src="{{ asset('assets/imglab/'.$lab->gambar) }}" class="card-img-top" alt="{{ $lab->nama }}">
+                    <img src="{{ asset('assets/imgfasilitas/'.$lab->gambar) }}" class="card-img-top" alt="{{ $lab->nama }}">
                     <div class="card-body text-center">
-                        <h5 class="card-title">{{ $lab->nama }}</h5>
+                        <h5 class="card-title">Laboratorium</h5>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
 <div class="modal fade" id="labModal{{ $lab->id }}" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content bg-transparent border-0">
-      <img src="{{ asset('assets/imglab/'.$lab->gambar) }}" class="img-fluid rounded shadow" alt="{{ $lab->nama }}">
+      <img src="{{ asset('assets/imgfasilitas/'.$lab->gambar) }}" class="img-fluid rounded shadow" alt="{{ $lab->nama }}">
     </div>
   </div>
 </div>

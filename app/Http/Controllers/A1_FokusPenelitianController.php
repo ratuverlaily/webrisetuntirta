@@ -4,25 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Models\FokusPenelitian;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class A1_FokusPenelitianController extends Controller
 {
-    public function fokusPenelitianView() {
+    public function View() {
         $fokusPenelitian = FokusPenelitian::latest()->get();
         return view('admin.tentang.fokuspenelitian.index',compact('fokusPenelitian'));
     }
 
-    public function fokusPenelitianContent(){
+    public function Content(){
         $fokusPenelitian = FokusPenelitian::all();
         return view('pengunjung.tentang.fokuspenelitian',compact('fokusPenelitian'));
     }
 
-    public function fokusPenelitianCreate() {
+    public function Create() {
         return view('admin.tentang.fokuspenelitian.create');
     }
 
-    public function fokusPenelitianStore(Request $request) {
+    public function Store(Request $request) {
         $request->validate([
             'judul' => 'required|string|max:255',
             'deskripsi' => 'required',
@@ -41,12 +40,12 @@ class A1_FokusPenelitianController extends Controller
         return redirect()->route('fokuspenelitian.view')->with('success', 'Data berhasil ditambahkan!');
     }
 
-    public function fokusPenelitianEdit($id) {
+    public function Edit($id) {
         $fokus = FokusPenelitian::findOrFail($id);
         return view('admin.tentang.fokuspenelitian.edit', compact('fokus'));
     }
 
-    public function fokusPenelitianUpdate(Request $request, FokusPenelitian $fokus) {
+    public function Update(Request $request, FokusPenelitian $fokus) {
         $request->validate([
             'judul' => 'required|string|max:255',
             'deskripsi' => 'required',
@@ -74,7 +73,7 @@ class A1_FokusPenelitianController extends Controller
         return redirect()->route('fokuspenelitian.view')->with('success', 'Data berhasil diperbarui!');
     }
 
-    public function fokusPenelitianDestroy(FokusPenelitian $fokus) {
+    public function Destroy(FokusPenelitian $fokus) {
         if ($fokus->gambar && file_exists(public_path('assets/imgbr' . $fokus->gambar))) {
             unlink(public_path('assets/imgbr' . $fokus->gambar));
         }

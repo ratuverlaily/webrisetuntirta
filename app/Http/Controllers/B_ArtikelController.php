@@ -1,16 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
-
-class AdminController extends Controller
+class B_ArtikelController extends Controller
 {
     public function View() {
         $users = User::latest()->get();
-        return view('admin.dashboard.index', compact('users'));
+        return view('admin.artikel.index', compact('users'));
     }
 
     public function Create() {

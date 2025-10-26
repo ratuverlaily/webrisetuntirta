@@ -2,24 +2,22 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Models\VisiMisi;
-
 
 class A_VisiMisiController extends Controller
 {
-    public function visiMisiContent(){
+    public function Content(){
         $visimisi = VisiMisi::first();
         return view('pengunjung.tentang.visimisi',compact('visimisi'));
     }
 
-    public function visiMisiView() {
+    public function View() {
         // Ambil data pertama (karena biasanya hanya satu konten visi misi)
         $visimisi = VisiMisi::first();
         return view('admin.tentang.visimisi.index',compact('visimisi'));
     }
 
-    public function visiMisiStore(Request $request) {
+    public function Store(Request $request) {
         $request->validate([
             'title'   => 'required|string|max:255',
             'content' => 'required|string',
@@ -33,7 +31,7 @@ class A_VisiMisiController extends Controller
         return redirect()->back()->with('success', 'Visi Misi berhasil disimpan.');
     }
 
-    public function visiMisiUpdate(Request $request, $id) {
+    public function Update(Request $request, $id) {
         $request->validate([
             'title'   => 'required|string|max:255',
             'content' => 'required|string',

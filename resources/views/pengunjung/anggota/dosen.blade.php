@@ -5,10 +5,10 @@
 <section id="blog" style="background:#f0f2f5; padding:40px 0;">
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center mb-3">
-                <div class="intro">
-                    <h2 style="letter-spacing: 8px; color:#004080; border-bottom: 2px solid #004080; display:inline-block;">PENELITI & STAF PENELITI</h2>
-                </div>
+            <div class="text-center mb-4">
+                <h2 class="custom-underline text-judul fw-bold" style="letter-spacing: 4px;">
+                  PENELITI & STAF PENELITI
+                </h2>
             </div>
         </div>
         <div class="row g-4 justify-content-center">
@@ -40,7 +40,7 @@
                                 <div class="flex-grow-1">
                                     <!-- Keterangan Jabatan -->
                                     @if(strtolower($item->email) == 'alimuddineeuntirta@yahoo.com')
-                                        <span class="badge bg-primary mb-1">Kepala Laboratorium</span>
+                                        <span class="badge bg-primary mb-1">Pimpinan Riset Study</span>
                                     @else
                                         <span class="badge bg-secondary mb-1">Anggota</span>
                                     @endif

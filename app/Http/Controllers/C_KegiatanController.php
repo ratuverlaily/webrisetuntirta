@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
-
-class AdminController extends Controller
+class C_KegiatanController extends Controller
 {
     public function View() {
         $users = User::latest()->get();

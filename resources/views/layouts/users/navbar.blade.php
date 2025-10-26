@@ -29,46 +29,21 @@
                     </div>
                 </div>
 
-                {{-- Kegiatan --}}
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle {{ request()->routeIs('kegiatan.sfw') || request()->routeIs('kegiatan.penelitian')
-                    || request()->routeIs('kegiatan.pengabdian') ?'active' : '' }}" data-bs-toggle="dropdown">Kegiatan</a>
-                    <div class="dropdown-menu fade-down my-3">
-                        <a href="{{ asset('kegiatan/sfw') }}" class="dropdown-item text-white">Seminar, FGD & Workshop</a>
-                        <a href="{{ asset('kegiatan/penelitian') }}" class="dropdown-item text-white">Penelitian</a>
-                        <a href="{{ asset('kegiatan/pengabdian') }}" class="dropdown-item text-white">Pengabdian Masyarakat</a>
-                    </div>
-                </div>
+                <a href="{{ asset('artikel/view') }}" class="nav-item nav-link {{ request()->routeIs('artikel.view') ? 'active' : '' }}">Artikel Penelitian</a>
 
-                {{-- Publikasi --}}
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle {{ request()->routeIs('publikasi.artikel') || request()->routeIs('publikasi.buku')
-                    || request()->routeIs('publikasi.seminar') || request()->routeIs('publikasi.makala') || request()->routeIs('publikasi.paper')
-                    || request()->routeIs('publikasi.chapter') ?'active' : '' }}" data-bs-toggle="dropdown">Publikasi</a>
-                    <div class="dropdown-menu fade-down my-3">
-                        <a href="{{ asset('publikasi/artikel') }}" class="dropdown-item text-white">Artikel Jurnal</a>
-                        <a href="{{ asset('publikasi/buku') }}" class="dropdown-item text-white">Buku</a>
-                        <a href="{{ asset('publikasi/seminar') }}" class="dropdown-item text-white">Publikasi Seminar</a>
-                        <a href="{{ asset('publikasi/makala') }}" class="dropdown-item text-white">Makala</a>
-                        <a href="{{ asset('publikasi/paper') }}" class="dropdown-item text-white">Working Paper</a>
-                        <a href="{{ asset('publikasi/chapter') }}" class="dropdown-item text-white">Chapters</a>
-                    </div>
-                </div>
-
-                {{-- Gallery --}}
-                <a href="{{ asset('gallery') }}" class="nav-item nav-link {{ request()->routeIs('gallery') ? 'active' : '' }}">Gallery</a>
+                <a href="{{ asset('risetkami/view') }}" class="nav-item nav-link {{ request()->routeIs('risetkami.view') ? 'active' : '' }}">Riset Kami</a>
 
                 {{-- Tim Riset --}}
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle {{ request()->routeIs('anggota') ? 'active' : '' }}" data-bs-toggle="dropdown">Anggota</a>
                     <div class="dropdown-menu fade-down my-3">
 
-                        <a href="{{ asset('anggota') }}" class="dropdown-item text-white">Peneliti & Staf Peneliti</a>
+                        <a href="{{ asset('anggota/view') }}" class="dropdown-item text-white">Peneliti & Staf Peneliti</a>
                     </div>
                 </div>
 
                 {{-- Kontak --}}
-                <a href="{{ asset('kontak') }}" class="nav-item nav-link {{ request()->routeIs('kontak') ? 'active' : '' }}">Kontak</a>
+                <a href="{{ asset('kontak/view') }}" class="nav-item nav-link {{ request()->routeIs('kontak') ? 'active' : '' }}">Kontak</a>
 
             </div>
         </div>
